@@ -29,15 +29,14 @@ const p = console.log;
 // .slice()
 // .substring()
 // .split() - breaking up a string into array elements
+//            NOTE: the complementary array join() method
+//            can be used create a string
 
-// (4) Joining a string from array elements
-// .join()
-
-// (5) Cleaning up or padding a string
+// (4) Cleaning up or padding a string
 // .trim(), .trimStart(), .trimEnd()
 // .padStart(), .padEnd()
 
-// (6) Regular Expressions -- MUST KNOW!!!
+// (5) Regular Expressions -- MUST KNOW!!!
 // .search(regex) / .match(regex) / .replace(pattern)
 
 // =====================
@@ -47,9 +46,9 @@ let name = "cormac".toUpperCase();
 p(name);
 p(name.toLowerCase());
 
-// =====================
+// ==========================
 // (2) Indexing into a string
-// =====================
+// ==========================
 let a = "hello world";
 p(a);
 p("0:", a.at(0));
@@ -87,9 +86,9 @@ p("Aa".charCodeAt(1));
 p("a1b2c3".toUpperCase());
 p("a1B2c3".toUpperCase());
 
-// =====================
+// =======================
 // (3) Carving up a string
-// =====================
+// =======================
 // .slice()
 let s = "hello world";
 // Can't do the following:
@@ -120,18 +119,47 @@ let csv = "10,9,8,7,6,5,4,3,2,1";
 let data = csv.split(",");
 p(data);
 
-// =====================
-// (4) Joining a string from array elements
-// =====================
-// Let's used previous split (data):
+// ============================================
+// NOTE: Joining a string from array elements
+// This is an array method, but it's convenient
+// to show how array join() works after showing
+// how string split works. They complement each
+// other and are very frequently used together.
+// ============================================
+// Let's used previous split (data) and join it:
 let t = data.join("");
 p(t);
 
-// that doesn't look nice, so let's put a nice separator
-t = data.join(" : ");
+// That doesn't look nice (digits are all
+// cramped up together), so let's add a separator:
+t = data.join(" | ");
 p(t);
 
-// Is this a palindrome?
+// ===================================
+// (4) Cleaning up or padding a string
+// ===================================
+// .trim(), .trimStart(), .trimEnd()
+// .padStart(), .padEnd()
+
+// =======================================
+// (5) Regular Expressions -- MUST KNOW!!!
+// =======================================
+// .search(regex) / .match(regex) / .replace(pattern)
+
+// =======================================================
+// PUTTING IT ALTOGETHER!
+// Introduction to an algorithm: Is a string a palindrome?
+//
+// A palindrome is a string that is the same forwards and
+// backwards (ignoring case and punctuation).
+//
+// This is just one way to implement the algorithm, but
+// lets put what you've learned in this module to use!
+//
+// Study this until you understand and can implement it
+// on your own!
+// =======================================================
+
 let u = "A man a plan a canal Panama";
 p(u);
 
@@ -142,14 +170,3 @@ let backward = forward.split("").reverse().join("");
 p(backward);
 
 p("isPalindrome?", forward === backward);
-
-// =====================
-// (5) Cleaning up or padding a string
-// =====================
-// .trim(), .trimStart(), .trimEnd()
-// .padStart(), .padEnd()
-
-// =====================
-// (6) Regular Expressions -- MUST KNOW!!!
-// =====================
-// .search(regex) / .match(regex) / .replace(pattern)
