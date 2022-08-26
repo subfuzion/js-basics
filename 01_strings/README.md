@@ -67,6 +67,9 @@ s[0]
 
 s[1]
 // e
+
+s[s.length - ]
+// e
 ```
 
 Unlike arrays, however, this notation can't be used to replace values. Strings
@@ -121,7 +124,7 @@ The characters of a string can be iterated using either a `for` or  a `for..of` 
 ```js
 let pet = "dog";
 for (let i = 0; i < pet.length; i++) {
-  console.log(c[i]);
+  console.log(pet[i]);
 }
 // d
 // o
