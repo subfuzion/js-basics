@@ -55,9 +55,9 @@ the common ones (space, newline, tab) are shown above. See
 [here](https://developer.mozilla.org/en-US/docs/Glossary/Whitespace#in_javascript)
 for more information.
 
-## Character access and iteration
+## Accessing individual characters
 
-Individual characters can be accessed using bracket notation.
+Individual characters can be accessed using bracket notation or by using the string `.at()` method.
 
 ```js
 let s = "Hello";
@@ -72,9 +72,52 @@ s[1]
 Unlike arrays, however, this notation can't be used to replace values. Strings
 are immutable.
 
-Strings can iterated over and invidual characters can be accessed using bracket
-notation.
+The convenience of using the string `.at()` method is that negative indices can
+be used to access characters starting from the end.
 
+```js
+let s = "hello";
+
+s.at(0)
+// H
+
+s.at(-1)
+// o
+```
+
+Another convenience is that you can do division without worrying about using
+`Math.floor()` to avoid a decimal point.
+
+```js
+let s = "abcde";
+
+let mid = s.length / 2;
+
+console.log(s[mid]);
+// undefined
+
+// Must use Math.floor to round down (for integer math).
+console.log(s[Math.floor(mid)]);
+// c
+
+// The .at() method handles this for you.
+console.log(s.at(mid));
+// c
+
+s = "abcd";
+mid = s.length / 2;
+console.log(s.at(mid));
+// "c"
+```
+
+> Note: For the last example above, there is no exact middle for a string of
+even length. Using the direct result of dividing by 2 is the normal convention.
+
+## Iterating over characters
+
+The characters of a string can be iterated using either a `for` or  a `for..of` loop.
+
+`for` loop:
 ```js
 let pet = "dog";
 for (let i = 0; i < pet.length; i++) {
@@ -85,8 +128,7 @@ for (let i = 0; i < pet.length; i++) {
 // g
 ```
 
-Strings can also be iterated over using a for..of loop.
-
+`for..of` loop:
 ```js
 let pet = "dog";
 for (ch of pet) {
@@ -155,8 +197,12 @@ yourself with all of the string methods documented [here](https://developer.mozi
 ### Extracting parts of a string
 
 - [`.slice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+  — `.slice()` is used to extract parts of strings, called substrings, from
+  the start index (inclusive) up to but not including the end index (exclusive).
+  Negative indices can be used to start from the end instead of the beginning
+  of a string.
 - `.substring()`
-  Note: `slice` and `substring` are almost identical, but
+  — `slice` and `substring` are almost identical, but
   `slice` lets you use negative indices, where as `substring`
   converts any negative number to zero, and then reorders
   the start and end indices (if necessary) so that the
@@ -165,7 +211,9 @@ yourself with all of the string methods documented [here](https://developer.mozi
   behavior, so at least initially, just focus on `slice`.
 
 - [`.split()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
-  Note: The complementary array join() method can be used to create a string
+  — The complementary array
+  [`join()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+  method can be used to create a string
   from array elements. These are often used together.
 
 ### Trimming strings
