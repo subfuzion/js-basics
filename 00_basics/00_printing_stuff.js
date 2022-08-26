@@ -4,7 +4,7 @@
 // In JavaScript, a string is quoted (can be single or double
 // quotes).
 console.log("Hello, world!");
-console.log("Hello, world!");
+console.log('Hello, world!');
 
 // (2) As two separate strings (console.log() automatically prints a
 // space between separate arguments).
