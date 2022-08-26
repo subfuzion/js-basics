@@ -28,9 +28,17 @@ const p = console.log;
 // (3) Carving up a string
 // .slice()
 // .substring()
+//   NOTE: slice and substring are almost identical, but
+//   slice lets you use negative indices, where as substring
+//   converts any negative number to zero, and then reorders
+//   your start and end indices (if necessary) so that the
+//   start index is less than the end index. Many programmers
+//   find slice() behavior more intuitive than substring()
+//   behavior, so for now, just focus on slice().
+
 // .split() - breaking up a string into array elements
-//            NOTE: the complementary array join() method
-//            can be used create a string
+//   NOTE: the complementary array join() method can be
+//   used to create a string
 
 // (4) Cleaning up or padding a string
 // .trim(), .trimStart(), .trimEnd()
