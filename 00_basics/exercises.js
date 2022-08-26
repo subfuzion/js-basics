@@ -31,14 +31,16 @@ function join(s1, s2) {
 }
 
 // Test it:
-let greeting = join("Hello", "Cormac");
-console.log(greeting);
+{
+  let greeting = join("Hello", "Cormac");
+  console.log(greeting);
 
-let expectedGreeting = "Hello Cormac";
-if (greeting === expectedGreeting) {
-  console.log("PASS: 4")
-} else {
-  console.log("FAIL: 4, actual:", greeting, "expected:", expectedGreeting);
+  let expectedGreeting = "Hello Cormac";
+  if (greeting === expectedGreeting) {
+    console.log("PASS: 4")
+  } else {
+    console.log("FAIL: 4, actual:", greeting, "expected:", expectedGreeting);
+  }
 }
 
 // (5) Implement a function that returns the product of
@@ -51,11 +53,13 @@ function mul(a, b) {
 }
 
 // test it:
-let a = 5;
-let b = 6;
-let product = mul(a, b);
-if (product === a * 6) {
-  console.log("PASS (nice work!)");
-} else {
-  console.log("FAIL (try again)! actual:", product, "expected:", a * b);
+{
+  let a = 5;
+  let b = 6;
+  let product = mul(a, b);
+  if (product === a * 6) {
+    console.log("PASS (nice work!)");
+  } else {
+    console.log("FAIL (try again)! actual:", product, "expected:", a * b);
+  }
 }
