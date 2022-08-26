@@ -8,30 +8,49 @@
 function toLowerCase(s) {
 }
 
-// ===== //
-// TESTS //
-// ===== //
+// ============================================================================
+// TESTS
+// ============================================================================
 
-{
-  let input = "CORMAC";
-  let expected = "cormac";
-  let actual = toLowerCase(input);
+// The comparison function for tests.
+// returns true when actual is equal to expected.
+let cmp = (a, b) => a === b;
 
-  if (actual !== expected) {
-    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+// Our test cases. Can you think of more?
+let tests = [
+  {
+    id: 1,
+    fn: toLowerCase,
+    args: ["CORMAC"],
+    expected: "cormac",
+    cmpfn: cmp,
+  },
+  {
+    id: 2,
+    fn: toLowerCase,
+    args: ["cormac"],
+    expected: "cormac",
+    cmpfn: cmp,
+  },
+  {
+    id: 3,
+    fn: toLowerCase,
+    args: [""],
+    expected: "",
+    cmpfn: cmp,
+  },
+];
+
+for (let i = 0; i < tests.length; i++) {
+  let t = tests[i];
+  t.actual = t.fn.apply(null, t.args);
+
+  if (cmp(t.actual, t.expected)) {
+    console.log(`✅ PASS: ${t.id}`);
   } else {
-    console.log("✅ PASS");
-  }
-}
-
-{
-  let input = "cormac";
-  let expected = "cormac";
-  let actual = toLowerCase(input);
-
-  if (actual !== expected) {
-    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
-  } else {
-    console.log("✅ PASS");
+    // stringify to pretty-print values
+    let actual = JSON.stringify(t.actual);
+    let expected = JSON.stringify(t.expected);
+    console.log(`❌ FAIL: ${t.id}. actual: ${actual}, expected: ${expected}`);
   }
 }

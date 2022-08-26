@@ -11,97 +11,70 @@
 function slice(s, start) {
 }
 
-// ===== //
-// TESTS //
-// ===== //
+// ============================================================================
+// TESTS
+// ============================================================================
 
-{
-  let input = "Cormac";
-  let start = 3;
-  let expected = "mac";
-  let actual = slice(input, start);
+// The comparison function for tests.
+// returns true when actual is equal to expected.
+let cmp = (a, b) => a === b;
 
-  if (actual !== expected) {
-    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+// Our test cases. Can you think of more?
+let tests = [
+  {
+    id: 1,
+    fn: slice,
+    args: ["Cormac", 3],
+    expected: "mac",
+    cmpfn: cmp,
+  },
+  {
+    id: 2,
+    fn: slice,
+    args: ["Cormac", 0],
+    expected: "Cormac",
+    cmpfn: cmp,
+  },
+  {
+    id: 3,
+    fn: slice,
+    args: ["Cormac", 5],
+    expected: "c",
+    cmpfn: cmp,
+  },
+  {
+    id: 4,
+    fn: slice,
+    args: ["Cormac", 6],
+    expected: "",
+    cmpfn: cmp,
+  },
+  {
+    id: 5,
+    fn: slice,
+    args: ["Cormac", 7],
+    expected: "",
+    cmpfn: cmp,
+  },
+  {
+    id: 6,
+    fn: slice,
+    args: ["Cormac", -1],
+    expected: "c",
+    cmpfn: cmp,
+  },
+];
+
+for (let i = 0; i < tests.length; i++) {
+  let t = tests[i];
+  t.actual = t.fn.apply(null, t.args);
+
+  if (cmp(t.actual, t.expected)) {
+    console.log(`✅ PASS: ${t.id}`);
   } else {
-    console.log("✅ PASS");
-  }
-}
-
-{
-  let input = "Cormac";
-  let start = 0;
-  let expected = "Cormac";
-  let actual = slice(input, start);
-
-  if (actual !== expected) {
-    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
-  } else {
-    console.log("✅ PASS");
-  }
-}
-
-{
-  let input = "Cormac";
-  let start = "5";
-  let expected = "c";
-  let actual = slice(input, start);
-
-  if (actual !== expected) {
-    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
-  } else {
-    console.log("✅ PASS");
-  }
-}
-
-{
-  let input = "Cormac";
-  let start = input.length;
-  let expected = "";
-  let actual = slice(input, start);
-
-  if (actual !== expected) {
-    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
-  } else {
-    console.log("✅ PASS");
-  }
-}
-
-{
-  let input = "Cormac";
-  let start = input.length + 1;
-  let expected = "";
-  let actual = slice(input, start);
-
-  if (actual !== expected) {
-    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
-  } else {
-    console.log("✅ PASS");
-  }
-}
-
-{
-  let input = "Cormac";
-  let start = -1;
-  let expected = "c";
-  let actual = slice(input, start);
-
-  if (actual !== expected) {
-    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
-  } else {
-    console.log("✅ PASS");
-  }
-}
-
-{
-  let input = "Cormac";
-  let start = -input.length;
-  let expected = "c";
-  let actual = slice(input, start);
-
-  if (actual !== expected) {
-    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
-  } else {
-    console.log("✅ PASS");
+    // stringify to pretty-print values
+    let actual = JSON.stringify(t.actual);
+    let expected = JSON.stringify(t.expected);
+    console.log(`❌ FAIL: ${t.id}. actual: ${actual}, expected: ${expected}`);
   }
 }

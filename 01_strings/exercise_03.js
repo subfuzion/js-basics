@@ -8,58 +8,56 @@
 function at(s, index) {
 }
 
-// ===== //
-// TESTS //
-// ===== //
+// ============================================================================
+// TESTS
+// ============================================================================
 
-{
-  let input = "Cormac";
-  let index = 3;
-  let expected = "m";
-  let actual = at(input, index);
+// The comparison function for tests.
+// returns true when actual is equal to expected.
+let cmp = (a, b) => a === b;
 
-  if (actual !== expected) {
-    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+// Our test cases. Can you think of more?
+let tests = [
+  {
+    id: 1,
+    fn: at,
+    args: ["Cormac", 3],
+    expected: "m",
+    cmpfn: cmp,
+  },
+  {
+    id: 2,
+    fn: at,
+    args: ["Cormac", 6],
+    expected: undefined,
+    cmpfn: cmp,
+  },
+  {
+    id: 3,
+    fn: at,
+    args: ["Cormac", 5],
+    expected: "c",
+    cmpfn: cmp,
+  },
+  {
+    id: 4,
+    fn: at,
+    args: ["Cormac", 6],
+    expected: undefined,
+    cmpfn: cmp,
+  },
+];
+
+for (let i = 0; i < tests.length; i++) {
+  let t = tests[i];
+  t.actual = t.fn.apply(null, t.args);
+
+  if (cmp(t.actual, t.expected)) {
+    console.log(`✅ PASS: ${t.id}`);
   } else {
-    console.log("✅ PASS");
-  }
-}
-
-{
-  let input = "Cormac";
-  let index = 6;
-  let expected = undefined;
-  let actual = at(input, index);
-
-  if (actual !== expected) {
-    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
-  } else {
-    console.log("✅ PASS");
-  }
-}
-
-{
-  let input = "Cormac";
-  let index = input.length - 1;
-  let expected = "c";
-  let actual = at(input, index);
-
-  if (actual !== expected) {
-    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
-  } else {
-    console.log("✅ PASS");
-  }
-}
-
-{
-  let input = "Cormac";
-  let index = input.length;
-  let expected = undefined;
-  let actual = at(input, index);
-
-  if (actual !== expected) {
-    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
-  } else {
-    console.log("✅ PASS");
+    // stringify to pretty-print values
+    let actual = JSON.stringify(t.actual);
+    let expected = JSON.stringify(t.expected);
+    console.log(`❌ FAIL: ${t.id}. actual: ${actual}, expected: ${expected}`);
   }
 }

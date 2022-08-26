@@ -11,9 +11,9 @@
 function split(csv) {
 }
 
-// ===== //
-// TESTS //
-// ===== //
+// ============================================================================
+// TESTS
+// ============================================================================
 
 function isArrayEqual(a, b) {
   if (!a || !b) return false;
@@ -25,38 +25,45 @@ function isArrayEqual(a, b) {
   return true;
 }
 
-{
-  let input = "a,b,c";
-  let expected = ["a", "b", "c"];
-  let actual = split(input);
+// The comparison function for tests.
+// returns true when actual is equal to expected.
+let cmp = (a, b) => isArrayEqual(a, b);
 
-  if (!isArrayEqual(actual, expected)) {
-    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+// Our test cases. Can you think of more?
+let tests = [
+  {
+    id: 1,
+    fn: split,
+    args: ["a,b,c"],
+    expected: ["a", "b", "c"],
+    cmpfn: cmp,
+  },
+  {
+    id: 2,
+    fn: split,
+    args: ["a"],
+    expected: ["a"],
+    cmpfn: cmp,
+  },
+  {
+    id: 3,
+    fn: split,
+    args: [""],
+    expected: [""],
+    cmpfn: cmp,
+  },
+];
+
+for (let i = 0; i < tests.length; i++) {
+  let t = tests[i];
+  t.actual = t.fn.apply(null, t.args);
+
+  if (cmp(t.actual, t.expected)) {
+    console.log(`✅ PASS: ${t.id}`);
   } else {
-    console.log("✅ PASS");
-  }
-}
-
-{
-  let input = "a";
-  let expected = ["a"];
-  let actual = split(input);
-
-  if (!isArrayEqual(actual, expected)) {
-    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
-  } else {
-    console.log("✅ PASS");
-  }
-}
-
-{
-  let input = "";
-  let expected = [];
-  let actual = split(input);
-
-  if (!isArrayEqual(actual, expected)) {
-    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
-  } else {
-    console.log("✅ PASS");
+    // stringify to pretty-print values
+    let actual = JSON.stringify(t.actual);
+    let expected = JSON.stringify(t.expected);
+    console.log(`❌ FAIL: ${t.id}. actual: ${actual}, expected: ${expected}`);
   }
 }

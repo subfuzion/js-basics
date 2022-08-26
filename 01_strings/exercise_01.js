@@ -8,31 +8,56 @@
 function toUpperCase(s) {
 }
 
-// ===== //
-// TESTS //
-// ===== //
+// ============================================================================
+// TESTS
+// ============================================================================
 
-{
-  let input = "Cormac";
-  let expected = "CORMAC";
-  let actual = toUpperCase(input);
+// The comparison function for tests.
+// returns true when actual is equal to expected.
+let cmp = (a, b) => a === b;
 
-  if (actual !== expected) {
-    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+// Our test cases. Can you think of more?
+let tests = [
+  {
+    id: 1,
+    fn: toUpperCase,
+    args: ["Cormac"],
+    expected: "CORMAC",
+    cmpfn: cmp,
+  },
+  {
+    id: 2,
+    fn: toUpperCase,
+    args: ["CORMAC"],
+    expected: "CORMAC",
+    cmpfn: cmp,
+  },
+  {
+    id: 3,
+    fn: toUpperCase,
+    args: ["cormac"],
+    expected: "CORMAC",
+    cmpfn: cmp,
+  },
+  {
+    id: 4,
+    fn: toUpperCase,
+    args: [""],
+    expected: "",
+    cmpfn: cmp,
+  },
+];
+
+for (let i = 0; i < tests.length; i++) {
+  let t = tests[i];
+  t.actual = t.fn.apply(null, t.args);
+
+  if (cmp(t.actual, t.expected)) {
+    console.log(`✅ PASS: ${t.id}`);
   } else {
-    console.log("✅ PASS");
-  }
-}
-
-{
-  let input = "CORMAC";
-  let expected = "CORMAC";
-  let actual = toUpperCase(input);
-
-
-  if (actual !== expected) {
-    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
-  } else {
-    console.log("✅ PASS");
+    // stringify to pretty-print values
+    let actual = JSON.stringify(t.actual);
+    let expected = JSON.stringify(t.expected);
+    console.log(`❌ FAIL: ${t.id}. actual: ${actual}, expected: ${expected}`);
   }
 }
