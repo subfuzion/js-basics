@@ -2,6 +2,8 @@
  * Implement a function that returns the index of the specified character.
  * Example: indexOf("Cormac", "m");
  * Returns: 3
+ *
+ * NOTE: Use the appropriate string method to implement the function.
  */
 function indexOf(s, char) {
 }

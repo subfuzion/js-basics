@@ -2,6 +2,8 @@
  * Implement a function that returns a string converted to uppercase.
  * Example: toUpperCase("Cormac");
  * Returns: "CORMAC"
+ *
+ * NOTE: Use the appropriate string method to implement the function.
  */
 function toUpperCase(s) {
 }

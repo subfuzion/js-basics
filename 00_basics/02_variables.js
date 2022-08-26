@@ -35,16 +35,16 @@ let s2 = "world";
 let s3 = s1 + ", " + s2 + "!";
 console.log(s3); // Hello, world!
 
-let b = true;
-console.log(b); // true
-b = !b;
-console.log(b); // false
+let v = true;
+console.log(v); // true
+v = !v;
+console.log(v); // false
 
-b = 1 < 2;
-console.log(b); // true
+v = 1 < 2;
+console.log(v); // true
 
-b = 1 > 2;
-console.log(b); // false
+v = 1 > 2;
+console.log(v); // false
 
 // BEWARE: JavaScript lets you assign different types...
 let x = 0;

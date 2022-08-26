@@ -2,6 +2,8 @@
  * Implement a function that returns a character at the specified index.
  * Example: at("Cormac", 3);
  * Returns: "m"
+ *
+ * NOTE: Use the appropriate string method to implement the function.
  */
 function at(s, index) {
 }

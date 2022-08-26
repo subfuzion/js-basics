@@ -2,6 +2,8 @@
  * Implement a function that returns a string converted to lowercase.
  * Example: toLowerCase("CORMAC");
  * Returns: "cormac"
+ *
+ * NOTE: Use the appropriate string method to implement the function.
  */
 function toLowerCase(s) {
 }
