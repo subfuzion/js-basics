@@ -23,7 +23,9 @@ function slice(s, start, end) {
   let actual = slice(input, start, end);
 
   if (actual !== expected) {
-    console.log(`FAIL: actual: ${actual}, expected: ${expected}`);
+    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+  } else {
+    console.log("✅ PASS");
   }
 }
 
@@ -35,7 +37,9 @@ function slice(s, start, end) {
   let actual = slice(input, start);
 
   if (actual !== expected) {
-    console.log(`FAIL: actual: ${actual}, expected: ${expected}`);
+    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+  } else {
+    console.log("✅ PASS");
   }
 }
 
@@ -47,7 +51,9 @@ function slice(s, start, end) {
   let actual = slice(input, start);
 
   if (actual !== expected) {
-    console.log(`FAIL: actual: ${actual}, expected: ${expected}`);
+    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+  } else {
+    console.log("✅ PASS");
   }
 }
 
@@ -59,7 +65,9 @@ function slice(s, start, end) {
   let actual = slice(input, start);
 
   if (actual !== expected) {
-    console.log(`FAIL: actual: ${actual}, expected: ${expected}`);
+    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+  } else {
+    console.log("✅ PASS");
   }
 }
 
@@ -71,7 +79,9 @@ function slice(s, start, end) {
   let actual = slice(input, start);
 
   if (actual !== expected) {
-    console.log(`FAIL: actual: ${actual}, expected: ${expected}`);
+    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+  } else {
+    console.log("✅ PASS");
   }
 }
 
@@ -83,7 +93,9 @@ function slice(s, start, end) {
   let actual = slice(input, start);
 
   if (actual !== expected) {
-    console.log(`FAIL: actual: ${actual}, expected: ${expected}`);
+    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+  } else {
+    console.log("✅ PASS");
   }
 }
 
@@ -95,7 +107,9 @@ function slice(s, start, end) {
   let actual = slice(input, start);
 
   if (actual !== expected) {
-    console.log(`FAIL: actual: ${actual}, expected: ${expected}`);
+    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+  } else {
+    console.log("✅ PASS");
   }
 }
 
@@ -107,7 +121,9 @@ function slice(s, start, end) {
   let actual = slice(input, start);
 
   if (actual !== expected) {
-    console.log(`FAIL: actual: ${actual}, expected: ${expected}`);
+    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+  } else {
+    console.log("✅ PASS");
   }
 }
 
@@ -119,6 +135,8 @@ function slice(s, start, end) {
   let actual = slice(input, start);
 
   if (actual !== expected) {
-    console.log(`FAIL: actual: ${actual}, expected: ${expected}`);
+    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+  } else {
+    console.log("✅ PASS");
   }
 }

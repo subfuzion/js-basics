@@ -19,7 +19,9 @@ function indexOf(s, char) {
   let actual = indexOf(input, char);
 
   if (actual !== expected) {
-    console.log(`FAIL: actual: ${actual}, expected: ${expected}`);
+    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+  } else {
+    console.log("✅ PASS");
   }
 }
 
@@ -30,6 +32,8 @@ function indexOf(s, char) {
   let actual = indexOf(input, char);
 
   if (actual !== expected) {
-    console.log(`FAIL: actual: ${actual}, expected: ${expected}`);
+    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+  } else {
+    console.log("✅ PASS");
   }
 }

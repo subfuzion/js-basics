@@ -18,7 +18,9 @@ function toLowerCase(s) {
   let actual = toLowerCase(input);
 
   if (actual !== expected) {
-    console.log(`FAIL: actual: ${actual}, expected: ${expected}`);
+    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+  } else {
+    console.log("✅ PASS");
   }
 }
 
@@ -28,6 +30,8 @@ function toLowerCase(s) {
   let actual = toLowerCase(input);
 
   if (actual !== expected) {
-    console.log(`FAIL: actual: ${actual}, expected: ${expected}`);
+    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+  } else {
+    console.log("✅ PASS");
   }
 }

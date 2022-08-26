@@ -22,7 +22,9 @@ function slice(s, start) {
   let actual = slice(input, start);
 
   if (actual !== expected) {
-    console.log(`FAIL: actual: ${actual}, expected: ${expected}`);
+    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+  } else {
+    console.log("✅ PASS");
   }
 }
 
@@ -33,7 +35,9 @@ function slice(s, start) {
   let actual = slice(input, start);
 
   if (actual !== expected) {
-    console.log(`FAIL: actual: ${actual}, expected: ${expected}`);
+    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+  } else {
+    console.log("✅ PASS");
   }
 }
 
@@ -44,7 +48,9 @@ function slice(s, start) {
   let actual = slice(input, start);
 
   if (actual !== expected) {
-    console.log(`FAIL: actual: ${actual}, expected: ${expected}`);
+    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+  } else {
+    console.log("✅ PASS");
   }
 }
 
@@ -55,7 +61,9 @@ function slice(s, start) {
   let actual = slice(input, start);
 
   if (actual !== expected) {
-    console.log(`FAIL: actual: ${actual}, expected: ${expected}`);
+    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+  } else {
+    console.log("✅ PASS");
   }
 }
 
@@ -66,7 +74,9 @@ function slice(s, start) {
   let actual = slice(input, start);
 
   if (actual !== expected) {
-    console.log(`FAIL: actual: ${actual}, expected: ${expected}`);
+    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+  } else {
+    console.log("✅ PASS");
   }
 }
 
@@ -77,7 +87,9 @@ function slice(s, start) {
   let actual = slice(input, start);
 
   if (actual !== expected) {
-    console.log(`FAIL: actual: ${actual}, expected: ${expected}`);
+    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+  } else {
+    console.log("✅ PASS");
   }
 }
 
@@ -88,6 +100,8 @@ function slice(s, start) {
   let actual = slice(input, start);
 
   if (actual !== expected) {
-    console.log(`FAIL: actual: ${actual}, expected: ${expected}`);
+    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+  } else {
+    console.log("✅ PASS");
   }
 }

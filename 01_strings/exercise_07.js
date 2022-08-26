@@ -21,7 +21,9 @@ function removeFirstLast(s) {
   let actual = removeFirstLast(input);
 
   if (actual !== expected) {
-    console.log(`FAIL: actual: ${actual}, expected: ${expected}`);
+    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+  } else {
+    console.log("✅ PASS");
   }
 }
 
@@ -31,7 +33,9 @@ function removeFirstLast(s) {
   let actual = removeFirstLast(input);
 
   if (actual !== expected) {
-    console.log(`FAIL: actual: ${actual}, expected: ${expected}`);
+    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+  } else {
+    console.log("✅ PASS");
   }
 }
 
@@ -41,7 +45,9 @@ function removeFirstLast(s) {
   let actual = removeFirstLast(input);
 
   if (actual !== expected) {
-    console.log(`FAIL: actual: ${actual}, expected: ${expected}`);
+    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+  } else {
+    console.log("✅ PASS");
   }
 }
 
@@ -51,6 +57,8 @@ function removeFirstLast(s) {
   let actual = removeFirstLast(input);
 
   if (actual !== expected) {
-    console.log(`FAIL: actual: ${actual}, expected: ${expected}`);
+    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+  } else {
+    console.log("✅ PASS");
   }
 }

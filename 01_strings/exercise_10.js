@@ -31,7 +31,9 @@ function isArrayEqual(a, b) {
   let actual = splitA(input);
 
   if (!isArrayEqual(actual, expected)) {
-    console.log(`FAIL: actual: ${actual}, expected: ${expected}`);
+    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+  } else {
+    console.log("✅ PASS");
   }
 }
 
@@ -41,16 +43,20 @@ function isArrayEqual(a, b) {
   let actual = splitA(input);
 
   if (!isArrayEqual(actual, expected)) {
-    console.log(`FAIL: actual: ${actual}, expected: ${expected}`);
+    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+  } else {
+    console.log("✅ PASS");
   }
 }
 
 {
   let input = "";
   let expected = [""];
-  let actual = split(input);
+  let actual = splitA(input);
 
   if (!isArrayEqual(actual, expected)) {
-    console.log(`FAIL: actual: ${actual}, expected: ${expected}`);
+    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+  } else {
+    console.log("✅ PASS");
   }
 }

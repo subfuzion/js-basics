@@ -18,7 +18,9 @@ function toUpperCase(s) {
   let actual = toUpperCase(input);
 
   if (actual !== expected) {
-    console.log(`FAIL: actual: ${actual}, expected: ${expected}`);
+    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+  } else {
+    console.log("✅ PASS");
   }
 }
 
@@ -27,7 +29,10 @@ function toUpperCase(s) {
   let expected = "CORMAC";
   let actual = toUpperCase(input);
 
+
   if (actual !== expected) {
-    console.log(`FAIL: actual: ${actual}, expected: ${expected}`);
+    console.log(`❌ FAIL: actual: ${actual}, expected: ${expected}`);
+  } else {
+    console.log("✅ PASS");
   }
 }
