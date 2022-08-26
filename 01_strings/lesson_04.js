@@ -1,50 +1,57 @@
+// ============================================================================
+// EXERCISE
+// Use the appropriate string method to implement the function.
+// ============================================================================
+
 /**
- * Implement a function that returns the index of the specified character.
- * Example: indexOf("Cormac", "m");
- * Returns: 3
+ * Returns the index of the given character ch, or else -1 if not found.
  *
- * NOTE: Use the appropriate string method to implement the function.
+ * @param {string} s
+ * @param {string} ch
+ * @returns {string}
+ *
+ * @example
+ * exercise_04("Cormac", "m"); // returns 3
  */
-function indexOf(s, ch) {
+function exercise_04(s, ch) {
 }
 
 // ============================================================================
 // TESTS
 // ============================================================================
 
-// The comparison function for tests.
-// returns true when actual is equal to expected.
-let cmp = (a, b) => a === b;
+// Returns true when actual is strictly equal to expected.
+let equals = (a, b) => a === b;
 
 // Our test cases. Can you think of more?
 let tests = [
   {
     id: 1,
-    fn: indexOf,
+    fn: exercise_04,
     args: ["Cormac", "m"],
     expected: 3,
-    cmpfn: cmp,
+    cmpfn: equals,
   },
   {
     id: 2,
-    fn: indexOf,
+    fn: exercise_04,
     args: ["Cormac", "x"],
     expected: -1,
-    cmpfn: cmp,
+    cmpfn: equals,
   },
   {
     id: 3,
-    fn: indexOf,
+    fn: exercise_04,
     args: ["Cormac", "c"],
     expected: 5,
-    cmpfn: cmp,
+    cmpfn: equals,
   },
   {
     id: 4,
-    fn: indexOf,
+    fn: exercise_04,
     args: ["Cormac", ""],
     expected: 0,
-    cmpfn: cmp,
+    cmpfn: equals,
   },
 ];
 
@@ -52,7 +59,7 @@ for (let i = 0; i < tests.length; i++) {
   let t = tests[i];
   t.actual = t.fn.apply(null, t.args);
 
-  if (cmp(t.actual, t.expected)) {
+  if (t.cmpfn(t.actual, t.expected)) {
     console.log(`✅ PASS: ${t.id}`);
   } else {
     // stringify to pretty-print values

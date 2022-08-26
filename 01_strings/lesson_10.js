@@ -1,14 +1,26 @@
+// ============================================================================
+// Splitting strings with a specific delimiter (continued)
+// ============================================================================
+
+// See the docs:
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+
+
+// ============================================================================
+// EXERCISE
+// Use the appropriate string method to implement the function.
+// ============================================================================
+
 /**
- * Implement a function that splits strings on the letter a
- * and returns an array.
- * Example: split("banana");
- * Returns: ["b", "n", "n", ""]
+ * Splits a string using "a" as the delimiter and returns an array of strings.
  *
- * Learn from the tests. Consider adding your own!
+ * @param {string} s
+ * @returns {Array}
  *
- * NOTE: Use the appropriate string method to implement the function.
+ * @example
+ * exercise_10("banana"); // Returns ["b", "n", "n", ""]
  */
-function splitA(s) {
+function exercise_10(s) {
 }
 
 // ============================================================================
@@ -25,32 +37,31 @@ function isArrayEqual(a, b) {
   return true;
 }
 
-// The comparison function for tests.
-// returns true when actual is equal to expected.
-let cmp = (a, b) => isArrayEqual(a, b);
+// Returns true when actual is strictly equal to expected.
+let arrayEquals = (a, b) => isArrayEqual(a, b);
 
 // Our test cases. Can you think of more?
 let tests = [
   {
     id: 1,
-    fn: splitA,
+    fn: exercise_10,
     args: ["banana"],
     expected: ["b", "n", "n", ""],
-    cmpfn: cmp,
+    cmpfn: arrayEquals
   },
   {
     id: 2,
-    fn: splitA,
+    fn: exercise_10,
     args: ["a"],
     expected: ["", ""],
-    cmpfn: cmp,
+    cmpfn: arrayEquals
   },
   {
     id: 3,
-    fn: splitA,
+    fn: exercise_10,
     args: [""],
     expected: [""],
-    cmpfn: cmp,
+    cmpfn: arrayEquals
   },
 ];
 
@@ -58,7 +69,7 @@ for (let i = 0; i < tests.length; i++) {
   let t = tests[i];
   t.actual = t.fn.apply(null, t.args);
 
-  if (cmp(t.actual, t.expected)) {
+  if (t.cmpfn(t.actual, t.expected)) {
     console.log(`✅ PASS: ${t.id}`);
   } else {
     // stringify to pretty-print values
