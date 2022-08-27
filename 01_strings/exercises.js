@@ -1,6 +1,19 @@
 /**
  * Exercises: string methods
- * Implement the test functions, than run: node exercises.js
+ * Implement the test cases, then run: node exercises.js
+ *
+ * Every test case has the following properties:
+ *
+ * {
+ *   id:      // Optional (default: sequential test case number).
+ *   goal:    // Description of the test function expectation.
+ *   args:    // Optional. Array of test function arguments (default: []).
+ *   expect:  // Expected test function result.
+ *   hint:    // Optional hint (will be displayed if test fails).
+ *   test:    // Test function. It will be invoked with `args`
+ *            // and tested that its return value matches `expect`.
+ * }
+ *
  */
 import {test} from "../lib/test.js";
 
