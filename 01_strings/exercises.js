@@ -1,3 +1,7 @@
+/**
+ * Exercises: string methods
+ * Implement the test functions, than run: node exercises.js
+ */
 import {test} from "../lib/test.js";
 
 let exercises = [
