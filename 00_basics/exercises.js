@@ -1,49 +1,40 @@
-// (1) Implement a function to print the following output:
-// Hello
+// (1) Implement a function to return "Hello":
 
-function printHello() {
-
+function sayHello() {
+  // TODO
 }
 
-// (2) Implement a function to greet someone by name.
-// Example: sayHello("Cormac")
-// Output:  Hello Cormac
-
-function sayHello(name) {
-
-}
-
-// (3) Implement a function to print a greeting to a name.
-// Example: greet("Guten tag", "Cormac");
-// Output:  Guten tag Cormac
-
-function greet(greeting, name) {
-
-}
-
-// (4) Implement a function that returns a concatenated string,
-// separated with a space.
-// Example: join("Hello", "Cormac");
-// Returns: "Hello Cormac"
-
-function join(s1, s2) {
-
-}
-
-// Test it:
+// test it:
 {
-  let greeting = join("Hello", "Cormac");
-  console.log(greeting);
-
-  let expectedGreeting = "Hello Cormac";
-  if (greeting === expectedGreeting) {
-    console.log("PASS: 4")
+  let result = sayHello();
+  if (result === "Hello") {
+    console.log("✅ PASS: sayHello() =>", result);
   } else {
-    console.log("FAIL: 4, actual:", greeting, "expected:", expectedGreeting);
+    console.log("❌ FAIL: sayHello(): actual:", result, "expected: Hello");
   }
 }
 
-// (5) Implement a function that returns the product of
+// (2) Implement a function to greet someone by name.
+// Example: sayPersonalHello("Cormac")
+// Output:  "Hello Cormac"
+
+function sayPersonalHello(name) {
+  // TODO
+}
+
+// test it:
+{
+  let name = "Cormac";
+  let expect = "Hello Cormac";
+  let result = sayPersonalHello(name);
+  if (result === expect) {
+    console.log("✅ PASS: sayPersonalHello() =>", result);
+  } else {
+    console.log("❌ FAIL: sayPersonalHello(): actual:", result, "expected:", expect);
+  }
+}
+
+// (3) Implement a function that returns the product of
 // multiplying two numbers:
 // Example: mul(2, 3);
 // Returns: 6
@@ -56,10 +47,11 @@ function mul(a, b) {
 {
   let a = 5;
   let b = 6;
-  let product = mul(a, b);
-  if (product === a * 6) {
-    console.log("PASS (nice work!)");
+  let expect = a * b;
+  let result = mul(a, b);
+  if (result === a * 6) {
+    console.log("✅ PASS: mul(a, b) =>", result);
   } else {
-    console.log("FAIL (try again)! actual:", product, "expected:", a * b);
+    console.log("❌ FAIL: mul(): actual:", result, "expected:", expect);
   }
 }
